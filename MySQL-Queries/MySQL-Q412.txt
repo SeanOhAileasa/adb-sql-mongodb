@@ -1,0 +1,7 @@
+SELECT name,LifeExpectancy lifeexpectancy
+FROM country
+WHERE LifeExpectancy<(
+    SELECT AVG(LifeExpectancy) FROM
+    country)
+    AND Continent="Europe"
+GROUP BY name;

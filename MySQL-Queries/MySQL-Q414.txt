@@ -1,0 +1,6 @@
+SELECT city.Name name,country.Name name,countrylanguage.Language language,countrylanguage.Percentage percentage
+FROM country
+INNER JOIN city ON country.Capital=city.ID
+INNER JOIN countrylanguage ON country.Code=countrylanguage.CountryCode
+WHERE country.Continent="North America" AND countrylanguage.IsOfficial="T"
+ORDER BY city.Name,country.Name,countrylanguage.language,countrylanguage.Percentage;
